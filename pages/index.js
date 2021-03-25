@@ -2,8 +2,16 @@ import Head from "next/head";
 import { Col, Container, Row } from "react-bootstrap";
 import styled from "styled-components";
 import styles from "../styles/Home.module.css";
+import { useContext } from "react";
+import MainContext from "context/main/MainContext";
 
 export default function Home() {
+  const mainContext = useContext(MainContext);
+
+  const { number } = mainContext;
+
+  console.log(number);
+
   return (
     <Container>
       <Row>
