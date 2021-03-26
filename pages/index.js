@@ -1,20 +1,23 @@
 import Head from "next/head";
 import { Col, Container, Row } from "react-bootstrap";
+import { Testimonials } from "data";
 import styled from "styled-components";
 import styles from "../styles/Home.module.css";
+import TestimonialCard from "components/TestimonialCard";
 
 export default function Home() {
   return (
-    <Container>
+    <Container className='mt-5'>
       <Row>
         <Col
           className='d-flex  justify-content-center align-items-center '
           sm={12}
-          md={5}
+          md={12}
+          lg={5}
         >
-          <img src='/vercel.svg' alt='' />
+          <img className='mt-5 mt-md-5 mt-lg-0' src='/vercel.svg' alt='' />
         </Col>
-        <Col sm={12} md={7} className='mt-4 text-center'>
+        <Col sm={12} md={12} lg={7} className='mt-4 text-center'>
           <h1>Anne Marie’s Content Creations</h1>
           <p>
             Bespoke authentic high-quality content created with passion and
@@ -53,6 +56,13 @@ export default function Home() {
         </Col>
       </Row>
       <hr style={{ border: "1px solid white", height: 0 }} />
+      <Row>
+        {Testimonials.map((t) => (
+          <Col sm={12} md={4}>
+            <TestimonialCard t={t} />
+          </Col>
+        ))}
+      </Row>
     </Container>
   );
 }
