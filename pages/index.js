@@ -2,27 +2,19 @@ import Head from "next/head";
 import { Col, Container, Row } from "react-bootstrap";
 import styled from "styled-components";
 import styles from "../styles/Home.module.css";
-import { useContext } from "react";
-import MainContext from "context/main/MainContext";
 
 export default function Home() {
-  const mainContext = useContext(MainContext);
-
-  const { number } = mainContext;
-
-  console.log(number);
-
   return (
     <Container>
       <Row>
         <Col
-          className='d-flex  justify-content-center align-items-center'
+          className='d-flex  justify-content-center align-items-center '
           sm={12}
           md={5}
         >
           <img src='/vercel.svg' alt='' />
         </Col>
-        <Col sm={12} md={7}>
+        <Col sm={12} md={7} className='mt-4 text-center'>
           <h1>Anne Marie’s Content Creations</h1>
           <p>
             Bespoke authentic high-quality content created with passion and
@@ -60,6 +52,7 @@ export default function Home() {
           </p>
         </Col>
       </Row>
+      <hr style={{ border: "1px solid white", height: 0 }} />
     </Container>
   );
 }
